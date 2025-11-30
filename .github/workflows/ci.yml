@@ -37,14 +37,14 @@ jobs:
             ${{ runner.os }}-clojure-
       
       - name: Download dependencies
-        run: clj -P
+        run: clojure -P
       
       - name: Run tests
-        run: clj -X:test
+        run: clojure -X:test
       
       - name: Verify program runs
         run: |
-          echo -e "0 0\n1 1\n2 4" | clj -M -m interpolation.core --linear --step 0.5
+          echo -e "0 0\n1 1\n2 4" | clojure -M -m interpolation.core --linear --step 0.5
 
   lint:
     runs-on: ubuntu-latest
